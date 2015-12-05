@@ -1,0 +1,7 @@
+{
+  "name": "mesko-advent-of-code",
+  "version": "0.0.1",
+  "dependencies": {
+    "sprintf-js": "^1.0.3"
+  }
+}

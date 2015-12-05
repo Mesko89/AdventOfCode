@@ -1,17 +1,15 @@
 'use strict';
 
 var fs = require('fs');
+var sprintf = require('sprintf-js').sprintf;
 
 var input = fs.readFileSync('Day1/puzzle_input').toString().replace(/\r|\n/g,'');
 var floorInfo = { basementPosition: null, floor: 0 };
 floorInfo = input.split('').reduce(toFloorInfo, floorInfo);
 
-console.log('Instructions take santa to ' + floorInfo.floor + 'th floor.');
-console.log(
-	'Santa goes into basement by following instruction at position ' +
-	floorInfo.basementPosition +
-	'.'
-);
+console.log(sprintf('Instructions take santa to %dth floor.', floorInfo.floor));
+console.log(sprintf('Santa goes into basement by following instruction at position %d.',
+	floorInfo.basementPosition));
 
 function toFloorInfo(floorInfo, c, i) {
 	if (c === '(') floorInfo.floor++;
