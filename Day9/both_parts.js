@@ -2,6 +2,7 @@
 
 var fs = require('fs');
 var sprintf = require('sprintf-js').sprintf;
+var permutate = require('../Utils/permutate');
 
 var lines = fs.readFileSync('Day9/puzzle_input').toString().replace(/\r\n/g,'\n').split('\n');
 lines = lines.filter(w => !!w); // Remove last empty line if needed
@@ -39,17 +40,4 @@ function toRouteDistances(map) {
 			}
 		}, 0);
 	};
-}
-
-function permutate(list) {
-	var permutations = [];
-	function permute(currentList, options) {
-		if (!options.length) {
-			permutations.push(currentList);
-			return;
-		}
-		options.forEach(o => permute(currentList.concat([o]), options.filter(o2 => o !== o2)));
-	}
-	permute([], list);
-	return permutations;
 }
