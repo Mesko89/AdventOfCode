@@ -18,12 +18,12 @@ let registers = instructions.reduce((map, i) => {
 	return map;
 }, {});
 
-var firstRunResult = run(instructions, registers);
+let firstRunResult = run(instructions, registers);
 console.log(sprintf('Value of register "b" after running instructions: %d', firstRunResult.b));
 
 Object.keys(registers).forEach(k => registers[k] = 0);
 registers.a = 1;
-var secondRunResult = run(instructions, registers);
+let secondRunResult = run(instructions, registers);
 console.log(sprintf('Value of register "b" after running instructions: %d', secondRunResult.b));
 
 function run(instructions, registers) {
