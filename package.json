@@ -2,6 +2,7 @@
   "name": "mesko-advent-of-code",
   "version": "0.0.1",
   "dependencies": {
+    "js-combinatorics": "^1.5.4",
     "js-md5": "^0.3.0",
     "sprintf-js": "^1.0.3"
   }
